@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Information</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    {% load static %}
+    {% load humanize %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/checkout.css' %}">
+
+</head>
+<body>
+    
+    <div class="content">
+        <div class="cart">
+          {% for pitem in cart.items.all %}
+
+            <div class="item-row">
+                <div class="left">
+                    <div class="name">
+                        {{pitem.item.name}}
+                    </div>
+                    <div class="xseparator">
+                        x
+                    </div>
+                    <div class="quantity">
+                        {{pitem.quantity}}
+                    </div>
+                </div>
+                <div class="right">
+                    {{pitem.item.price}}
+                </div>
+            </div>
+            <hr class = "my-4">
+          {% endfor %}
+
+          <div class="divider">
+
+          </div>
+
+          <div class="total">
+              <div class="title">
+                  Tổng:
+              </div>
+              <div class="number">
+                {{cart.total_price}}
+              </div>
+              
+          </div>
+        </div>
+        <div class="buttons">
+            <form action="/">
+                <button class="btn btn-primary" type="submit">Back</button>
+            </form>
+            
+                <button class="btn btn-secondary" type="">Print</button>
+            
+            
+        </div>
+    </div>
+   
+ 
+
+</body>

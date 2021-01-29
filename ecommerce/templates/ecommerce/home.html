@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Information</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    
+    {% load static %}
+    {% load humanize %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/home.css' %}">
+    <script src="{% static 'ecommerce/home.js' %}"></script>   
+    <script id = "itemInCartHandlebar" type = "text/x-handlebars-template">
+            
+        {% verbatim %}
+        <div class="general">
+            <div class="code">
+                {{code}}
+            </div>
+            <div class="name">
+                {{name}}
+            </div>
+        </div>
+        <div class="priceu">
+            <div class="price">
+                {{price}}
+            </div>
+            <div class="quantity">
+                <div class="minus">
+                    -
+                </div>
+                <div class="number">
+                    1
+                </div>
+                <div class="plus">
+                    +
+                </div>
+                
+            </div>
+        </div>
+        {% endverbatim %}
+    </script>  
+    <script id = "itemInCheckoutHandlebar" type = "text/x-handlebars-template">
+            
+        {% verbatim %}
+        <div class="order-item">
+            <div class="nameu">
+                <div class="name">
+                    {{name}} 
+                </div>
+                <div class="xsperator">
+                    x
+                </div>
+                <div class="number">
+                    1
+                </div>
+            </div>
+            
+            <div class="price">
+                {{price}}
+            </div>
+        </div>
+        <hr class = "my-4">
+        
+        {% endverbatim %}
+    </script>  
+
+</head>
+<body>
+    <div class="nav">
+        <div class="search-box">
+            <div class="input-group">
+                <div class="form-outline">
+                  <input type="search" id="add-item-input" class="form-control" />
+                 
+                </div>
+                <button id ="add-item-btn" type="button" class="btn btn-primary">
+                    Add
+                </button>
+              </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="cart">
+            <div id = "cart-lists" class="cart-lists">
+               {% for item in items %}
+               <div id = "pItem-{{item.id}}" data-id = "{{item.id}}" class="item-element">
+                <div class="general">
+                    <div class="code">
+                        {{item.item.code}}
+                    </div>
+                    <div class="name">
+                        {{item.item.name}}
+                    </div>
+                </div>
+                <div class="priceu">
+                    <div class="price">
+                        {{item.item.price|intcomma}}
+                    </div>
+                    <div data-id = "{{item.id}}" id = "quantity-{{item.id}}" class="quantity">
+                        <div class="minus">
+                            -
+                        </div>
+                        <div class="number">
+                            {{item.quantity}}
+                        </div>
+                        <div class="plus">
+                            +
+                        </div>
+                        
+                    </div>
+                </div>
+               </div>
+               {% endfor %}
+            </div>
+        </div>
+        <div class="checkout">
+            <div class="order-name">
+                <div class="title">
+                    Đơn hàng 
+                </div>
+                <div class="order-id">
+                    #{{cart.id}}
+                 </div>
+                
+            </div>
+
+            <div id = "order-list-items" class="order-list-items">
+                {% for item in items %}
+                    <div id = "pcoItem-{{item.id}}">
+                        <div class="order-item">
+                            <div class="nameu">
+                                <div class="name">
+                                    {{item.item.name}}
+                                </div>
+                                <div class="xseperator">
+                                    x
+                                </div>
+                                <div class="number">
+                                    {{item.quantity}}
+                                </div>
+                            </div>
+                            
+                            <div class="price">
+                                {{item.item.price}}
+                            </div>
+                            
+                        </div>
+                        <hr class = "my-4">
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="total">
+                <div class="divider">
+
+                </div>
+                <div class="total-price">
+                    <div class="title">
+                        Tổng:
+                    </div>
+                    <div id = "total-money" class="number">
+                        100
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="button-area">
+                <form action = "/checkout">
+                    <button type="submit" id = "checkoutBtn" class="my-btn btn btn-primary btn-lg">Thanh toán</button>
+                </form>
+                
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

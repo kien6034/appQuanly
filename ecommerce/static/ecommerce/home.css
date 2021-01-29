@@ -1,0 +1,286 @@
+body {
+  background-color: #eee;
+}
+
+.nav {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background-color: #2a5a81;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav .search-box {
+  margin-left: 5%;
+}
+
+.nav .search-box div {
+  margin-right: 10px;
+}
+
+.content {
+  padding: 0 5% 0 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
+
+.content .cart {
+  width: 65%;
+}
+
+.content .cart .cart-lists {
+  margin: 30px;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.content .cart .cart-lists .item-element {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content .cart .cart-lists .item-element .general {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content .cart .cart-lists .item-element .general .code {
+  margin-left: 10px;
+  width: 50px;
+  border: 1px solid grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 90%;
+}
+
+.content .cart .cart-lists .item-element .general .name {
+  margin-left: 10px;
+}
+
+.content .cart .cart-lists .item-element .priceu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .cart .cart-lists .item-element .priceu .price {
+  margin-right: 15px;
+  font-size: 90%;
+}
+
+.content .cart .cart-lists .item-element .priceu .quantity {
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .cart .cart-lists .item-element .priceu .quantity .plus {
+  cursor: pointer;
+  border: 1px solid grey;
+  height: 20px;
+  width: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #61a761;
+  color: #e6e6e6;
+}
+
+.content .cart .cart-lists .item-element .priceu .quantity .number {
+  margin: 0 5px 0 5px;
+}
+
+.content .cart .cart-lists .item-element .priceu .quantity .minus {
+  cursor: pointer;
+  border: 1px solid grey;
+  height: 20px;
+  width: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #c85539;
+  color: #dddddd;
+}
+
+.content .cart .cart-lists .item-element:nth-child(odd) {
+  background-color: #eee;
+}
+
+.content .checkout {
+  margin-top: 20px;
+  width: 35%;
+  min-height: 75vh;
+  background-color: white;
+}
+
+.content .checkout .order-name {
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 200%;
+}
+
+.content .checkout .order-name .title {
+  color: #444;
+}
+
+.content .checkout .order-name .order-id {
+  color: #3b3b3b;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.content .checkout .order-list-items {
+  padding: 0 20px 0 20px;
+}
+
+.content .checkout .order-list-items .order-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content .checkout .order-list-items .order-item .nameu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .checkout .order-list-items .order-item .nameu .name {
+  font-size: 110%;
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+.content .checkout .order-list-items .order-item .nameu .number {
+  margin-left: 3px;
+}
+
+.content .checkout .order-list-items .order-item .price {
+  margin-right: 20px;
+}
+
+.content .checkout .order-list-items .my-4 {
+  margin: 10px 0 0px 0 !important;
+}
+
+.content .checkout .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px 0 20px;
+}
+
+.content .checkout .total .divider {
+  background-color: black;
+  width: 100%;
+  height: 2px;
+}
+
+.content .checkout .total .total-price {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content .checkout .total .total-price .title {
+  color: #272626;
+  font-weight: 600;
+  font-size: 120%;
+}
+
+.content .checkout .total .total-price .number {
+  padding-right: 20px;
+  font-size: 110%;
+}
+
+.content .checkout .button-area {
+  padding: 20px;
+}
+
+.content .checkout .button-area .my-btn {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.hidden {
+  display: none !important;
+}
+/*# sourceMappingURL=home.css.map */
